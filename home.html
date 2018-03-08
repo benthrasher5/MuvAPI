@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ben's API</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <style>
+        body { padding-top:50px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>My API</h1>
+            <h2>Usage:</h2>
+
+            <h3>./API/collection/</h3>
+            <h4><b>GET</b></h4>
+            <h4>Returns all objects in collection. If collection doesn't exist returns 404.</h4>
+            <br>
+
+            <h3>./API/collection/id/</h3>
+            <h4><b>GET</b></h4>
+            <h4>Returns the objects in collection with the corresponding object . If collection/item doesn't exist returns 404.</h4>
+            <h4><b>POST</b></h4>
+            <h4>Upserts body's object to collection. If no id field on object, one will be created. Returns upserted or new object, or 404 if collection doesn't exist</h4>
+            <br>
+
+            <h3>./headcount/muvId/</h3>
+            <h4>GET</h4>
+            <h4>Returns headcount for given muv id as a JSON object with "headcount" field</h4>
+            <br>
+
+            <h3>./login</h3>
+            <h4><b>POST</b></h4>
+            <h4>Body must contain username and password fields. If user and password match one in the db, returns a newly established valid session string and corresponding userId.</h4>
+            <br>
+
+            <h3>./logout</h3>
+            <h4><b>POST</b></h4>
+            <h4>Body must contain session string. Effectively logs out a user by deleting the corresponding session from the db.</h4>
+            <br>
+
+            <h3>./session</h3>
+            <h4><b>POST</b></h4>
+            <h4>Body must contain a "session" string. If a session with the corresponding id exists in the db, returns status 200, otherwise 400.</h4>
+            <br>
+        </div>
+    </div>
+
+</body>
+</html>
